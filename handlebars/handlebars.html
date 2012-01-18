@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Handlebars</title>
+    <link rel="stylesheet" href="../common/style.css" type="text/css" media="screen" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../common/data.js"></script>
+
+    <script src="handlebars-1.0.0.beta.6.min.js"></script>
+
+    <script type="text/template" id="turtles-single-template">
+      <ul>
+      {{#each turtles}}
+        <li class="turtle {{#if is_leader}}leader{{/if}}" 
+          style="background-color: {{color}}">
+          <h1>{{name}}</h1>
+          <p>
+            Weapon of choice: <span class="weapon">{{weapon}}</span>
+          </p>
+        </li>
+      {{/each}}
+      </ul>
+    </script>
+
+  </head>
+  <body>
+
+    <h1>Single template</h1>
+    <div id="single">
+    </div>
+
+    <script src="handlebars-test.js"></script>
+    
+  </body>
+</html>

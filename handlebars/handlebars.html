@@ -9,6 +9,7 @@
 
     <script src="handlebars-1.0.0.beta.6.min.js"></script>
 
+    <!-- SINGLE TEMPLATE -->
     <script type="text/template" id="turtles-single-template">
       <ul>
       {{#each turtles}}
@@ -23,11 +24,35 @@
       </ul>
     </script>
 
+    <!-- MASTER AND PARTIAL TEMPLATES -->
+    <script type="text/template" id="turtles-master-template">
+      <ul>
+      {{#each turtles}}
+        {{> turtle}}
+      {{/each}}
+      </ul>
+    </script>
+
+    <script type="text/template" id="turtle-partial-template">
+      <li class="turtle {{#if is_leader}}leader{{/if}}" 
+        style="background-color: {{color}}">
+        <h1>{{name}}</h1>
+        <p>
+          Weapon of choice: <span class="weapon">{{weapon}}</span>
+        </p>
+      </li>
+    </script>
+
+
   </head>
   <body>
 
     <h1>Single template</h1>
     <div id="single">
+    </div>
+
+    <h1>Master and partial template</h1>
+    <div id="master-and-partial">
     </div>
 
     <script src="handlebars-test.js"></script>

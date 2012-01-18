@@ -43,6 +43,15 @@
       </li>
     </script>
 
+    <!-- USING HELPERS -->
+    <script type="text/template" id="turtle-partial-template-with-helpers">
+      <li class="turtle {{#if is_leader}}leader{{/if}}" 
+        style="background-color: {{color}}">
+        <h1>{{name}}</h1>
+        {{{weaponOfChoice weapon}}}
+      </li>
+    </script>
+
 
   </head>
   <body>
@@ -53,6 +62,10 @@
 
     <h1>Master and partial template</h1>
     <div id="master-and-partial">
+    </div>
+
+    <h1>Helpers</h1>
+    <div id="helpers">
     </div>
 
     <script src="handlebars-test.js"></script>
